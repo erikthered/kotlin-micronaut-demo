@@ -9,7 +9,7 @@ import io.micronaut.http.annotation.Produces
 @Controller("/hello")
 class HelloController {
 
-    @Get("/")
+    @Get("{?name}")
     @Produces(MediaType.TEXT_PLAIN)
-    fun index() = HttpResponse.ok<String>("Hello World")
+    fun index(name: String?) = HttpResponse.ok<String>("Hello ${name ?: "World"}")
 }
