@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: me.erikthered
+---
+testFramework: spek
+sourceLanguage: kotlin
