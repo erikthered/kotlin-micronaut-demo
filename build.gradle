@@ -37,9 +37,9 @@ dependencies {
     testCompile "io.micronaut:micronaut-inject-java"
     testCompile "io.strikt:strikt-core:0.19.2"
     testCompile "org.junit.jupiter:junit-jupiter-api:5.1.0"
-    testCompile "org.jetbrains.spek:spek-api:1.1.5"
+    testCompile "org.spekframework.spek2:spek-dsl-jvm:${spekVersion}"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:5.1.0"
-    testRuntime "org.jetbrains.spek:spek-junit-platform-engine:1.1.5"
+    testRuntime "org.spekframework.spek2:spek-runner-junit5:${spekVersion}"
 }
 
 shadowJar {
@@ -51,7 +51,9 @@ run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1')
 mainClassName = "me.erikthered.Application"
 
 test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        includeEngines 'spek2'
+    }
 }
 
 allOpen {
