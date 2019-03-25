@@ -1,5 +1,6 @@
 package me.erikthered
 
+import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
@@ -10,7 +11,5 @@ class HelloController {
 
     @Get("/")
     @Produces(MediaType.TEXT_PLAIN)
-    fun index(): String {
-        return "Hello World"
-    }
+    fun index() = HttpResponse.ok<String>("Hello World")
 }
