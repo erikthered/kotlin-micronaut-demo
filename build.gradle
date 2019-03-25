@@ -33,7 +33,7 @@ dependencies {
     kapt "io.micronaut:micronaut-validation"
     kaptTest "io.micronaut:micronaut-inject-java"
     runtime "ch.qos.logback:logback-classic:1.2.3"
-    runtime "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.9.7"
     testCompile "io.micronaut:micronaut-inject-java"
     testCompile "io.strikt:strikt-core:0.19.2"
     testCompile "org.junit.jupiter:junit-jupiter-api:5.1.0"
